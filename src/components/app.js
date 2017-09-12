@@ -8,7 +8,8 @@ angular.module('video-player')
   };
   this.videos = $window.exampleVideoData;
   this.currentVideo = this.videos[0];
-  console.log(this.videos);
+  //this.currentVideo = undefined;
+  //console.log(this.videos);
 })
 .component('app', {
   templateUrl: 'src/templates/app.html', 
