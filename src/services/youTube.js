@@ -2,8 +2,6 @@ angular.module('video-player')
 .service('youTube', function($http, $window) {
   
   this.search = (query, callback) => {
-    console.log('search called');
-
     var params = {
       'q': query,
       'maxResults': 5,
