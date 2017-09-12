@@ -11,6 +11,7 @@ describe('search', function() {
     scope = $rootScope.$new();
 
     youTubeSearchMock = sinon.spy(function(string, callback) {
+      console.log('spy called');
       callback(fakeVideoData);
     });
 
@@ -32,13 +33,12 @@ describe('search', function() {
   });
 
   it('should not use & function binding', function() {
-    // console.log(element.isolateScope().$ctrl.result);
-    // console.log(resultSpy);
     expect(element.isolateScope().$ctrl.result).to.equal(resultSpy);
   });
 
   it('should invoke search when button is clicked', function() {
     element.find('button').click();
+    console.log(youTubeSearchMock.callCount);    
     expect(youTubeSearchMock.callCount).to.equal(1);
   });
 
@@ -49,7 +49,7 @@ describe('search', function() {
 
 
   // ADVANCED CONTENT TEST
-  xit('should have access to a search service within the scope', function() {
+  it('should have access to a search service within the scope', function() {
     expect(element.isolateScope().$ctrl.service).to.exist;
     expect(element.isolateScope().$ctrl.service).to.be.a('object');
   });

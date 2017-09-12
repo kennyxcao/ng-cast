@@ -1,16 +1,14 @@
 angular.module('video-player')
 .controller('searchController', function(youTube, $scope) {
-  this.result = (query, callback) => {
-    //console.log('result');
-    youTube.search(query, callback);
-  };
+  this.service = youTube;
 })
 .component('search', {
-  templateUrl: 'src/templates/search.html', 
+  controller: 'searchController',
 
   bindings: {
-    update: '<'
-  },
+    result: '<',
+    searchResults: '<'
+  },  
 
-  controller: 'searchController'
+  templateUrl: 'src/templates/search.html'  
 });
