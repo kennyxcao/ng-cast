@@ -2,6 +2,10 @@ angular.module('video-player')
 .service('youTube', function($http, $window) {
   
   this.search = (query, callback) => {
+    if (!query) {
+      return;
+    } 
+
     var params = {
       'q': query,
       'maxResults': 5,
