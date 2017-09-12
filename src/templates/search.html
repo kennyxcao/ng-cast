@@ -1,6 +1,9 @@
 <div class="search-bar form-inline">
-  <input class="form-control" type="text" ng-model="$ctrl.query" />
-  <button ng-click="$ctrl.searchYouTube($ctrl.query)" class="btn">
+  <input ng-keyup="$ctrl.searchYouTube($ctrl.query, $ctrl.result)" 
+         class="form-control" 
+         type="text" 
+         ng-model="$ctrl.query"/>
+  <button ng-click="$ctrl.searchYouTube($ctrl.query, $ctrl.result)" class="btn">
     <span class="glyphicon glyphicon-search"></span>
   </button>
 </div>

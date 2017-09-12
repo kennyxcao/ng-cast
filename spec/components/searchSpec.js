@@ -20,8 +20,9 @@ describe('search', function() {
     scope.result = resultSpy;
 
 
-    element = angular.element('<search data-service="service" data-result="result"></search>');
+    element = angular.element('<search data-service="service" data-result="result"></search>');    
     element = $compile(element)(scope);
+
 
     $rootScope.$digest();
   }));

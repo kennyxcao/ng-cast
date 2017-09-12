@@ -32,6 +32,7 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/sinon/pkg/sinon-1.17.7.js',
+      'node_modules/lodash/lodash.js',
       'spec/lib/chai.js',
       'src/index.js',
       'src/**/*.js',

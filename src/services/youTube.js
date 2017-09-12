@@ -21,7 +21,6 @@ angular.module('video-player')
     }, function(error) {
       console.log('AJAX request failed: ' + error);
     });
-
   };
 
 });
