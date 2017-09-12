@@ -10,6 +10,10 @@ angular.module('video-player')
     this.videos = videos;
     this.currentVideo = videos[0];
   };
+  this.submitSearch = (query) => {
+    console.log(query);
+    youTube.search(query, this.searchResults);    
+  };
 
   youTube.search('cats', this.searchResults);
 })

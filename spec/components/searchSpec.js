@@ -32,6 +32,8 @@ describe('search', function() {
   });
 
   it('should not use & function binding', function() {
+    // console.log(element.isolateScope().$ctrl.result);
+    // console.log(resultSpy);
     expect(element.isolateScope().$ctrl.result).to.equal(resultSpy);
   });
 

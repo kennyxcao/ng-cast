@@ -1,7 +1,8 @@
 angular.module('video-player')
 .service('youTube', function($http, $window) {
-
+  
   this.search = (query, callback) => {
+    //console.log('search called');
     var params = {
       'q': query,
       'maxResults': 5,
@@ -16,9 +17,12 @@ angular.module('video-player')
       url: 'https://www.googleapis.com/youtube/v3/search',
       params: params,
     }).then(function(response) {
-      callback(response.data.items);
+      console.log('sucessiful AJAX request');
+      if (callback) {
+        callback(response.data.items);
+      }
     }, function(error) {
-      console.log('AJAX request failed:' + error);
+      console.log('AJAX request failed: ' + error);
     });
   };
 
