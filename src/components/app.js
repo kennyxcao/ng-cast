@@ -1,5 +1,7 @@
 angular.module('video-player')
 .controller('appController', function($window, youTube) {
+  this.service = youTube;
+
   // Initial - empty videos
   this.videos = [];
   this.currentVideo = {};
@@ -7,8 +9,8 @@ angular.module('video-player')
   this.selectVideo = (video) => {
     this.currentVideo = video;
   };
-
-  this.searchResults = youTube.search;
+  
+  this.searchResults = this.service.search;
   
   this.result = (videos) => {
     this.videos = videos;

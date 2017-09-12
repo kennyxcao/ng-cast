@@ -1,8 +1,6 @@
 angular.module('video-player')
-.controller('searchController', function(youTube, $scope) {
-  this.service = youTube;
+.controller('searchController', function() {
   this.debounce = false;
-
   this.searchYouTube = (query, callback) => {
     if (this.debounce) {
       _.debounce((query, callback) => {
@@ -19,6 +17,7 @@ angular.module('video-player')
 
   bindings: {
     result: '<',
+    service: '<'
   },  
 
   templateUrl: 'src/templates/search.html'  
