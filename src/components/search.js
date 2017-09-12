@@ -2,5 +2,8 @@ angular.module('video-player')
 
 .component('search', {
   templateUrl: 'src/templates/search.html', 
-  // TODO
+  // controller: function(youTube) {
+  //   this.search = youTube.$http();
+  //   console.log(this.search);
+  // }
 });
