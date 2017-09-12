@@ -8,7 +8,11 @@
   <div class="video-player-details">
     <h3>{{$ctrl.video.snippet.title}}</h3>
     <div>{{$ctrl.video.snippet.description}}</div>
-    <p><b>Channel Title:</b> {{$ctrl.video.snippet.channelTitle}}</p>
-    <p><b>Published At:</b> {{$ctrl.video.snippet.publishedAt | date}}</p>
+    <h6><br><b>Channel Title:</b> {{$ctrl.video.snippet.channelTitle}}</h6>
+    <h6><b>Published At:</b> {{$ctrl.video.snippet.publishedAt | date}}</h6>
+    <h6><b>Comments:</b></h6>
+    <ul class="video-player-comments">
+      <video-details ng-repeat="comment in $ctrl.comments" comment="comment"><h5><em>videoDetails</em> component goes here</h5></video-details>
+    </ul>
   </div>
 </div>

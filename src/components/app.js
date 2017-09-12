@@ -1,25 +1,30 @@
 angular.module('video-player')
 .controller('appController', function($window, youTube) {
   this.service = youTube;
-
-  // Initial - empty videos
   this.videos = [];
   this.currentVideo = {};
+  this.comments = [];
 
   this.selectVideo = (video) => {
     this.currentVideo = video;
+    this.service.searchComments(this.currentVideo.id.videoId, this.updateComments);
   };
-  
-  this.searchResults = this.service.search;
   
   this.result = (videos) => {
     this.videos = videos;
     this.currentVideo = videos[0];
-  };  
+    this.service.searchComments(this.currentVideo.id.videoId, this.updateComments);
+  };
+
+  this.updateComments = (comments) => {
+    this.comments = comments;
+  };
+
+  this.searchResults = this.service.search;
 
   this.searchResults('cats', this.result);
 })
 .component('app', {
-  templateUrl: 'src/templates/app.html', 
-  controller: 'appController'
+  controller: 'appController',
+  templateUrl: 'src/templates/app.html'
 });
