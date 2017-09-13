@@ -1,13 +1,13 @@
 angular.module('video-player')
 .controller('searchController', function() {
   this.debounce = false;
-  this.searchYouTube = (query, callback) => {
+  this.searchYouTube = () => {
     if (this.debounce) {
       _.debounce((query, callback) => {
-        this.service.search(query, callback);
-      }, 500)(query, callback);
+        this.service.search(this.query, this.result);
+      }, 500)(this.query, this.result);
     } else {
-      this.service.search(query, callback);
+      this.service.search(this.query, this.result);
       this.debounce = true;
     }
   };
